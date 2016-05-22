@@ -23,12 +23,6 @@ import java.util.Date;
 
 public class PlayerListener implements Listener {
 
-    public static Scoreboards scoreboards;
-
-    public PlayerListener() {
-        scoreboards = new Scoreboards();
-    }
-
     @EventHandler
     public void messages(PlayerJoinEvent event) {
         Player p = event.getPlayer();
@@ -44,14 +38,14 @@ public class PlayerListener implements Listener {
 
         event.setJoinMessage(ChatColor.YELLOW + p.getName() + ChatColor.GRAY + " a rejoint le serveur " + ChatColor.GREEN + "(" + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers() + ")");
 
-        scoreboards.updatePlayer(false);
+        Scoreboards.updatePlayer(false);
     }
 
     @EventHandler
     public void messages(PlayerQuitEvent event) {
         Player p = event.getPlayer();
         event.setQuitMessage(ChatColor.YELLOW + p.getName() + ChatColor.GRAY + " a quitté le serveur " + ChatColor.GREEN + "(" + (Bukkit.getOnlinePlayers().size() - 1) + "/" + Bukkit.getMaxPlayers() + ")");
-        scoreboards.updatePlayer(true);
+        Scoreboards.updatePlayer(true);
     }
 
     @EventHandler(priority = EventPriority.LOW, ignoreCancelled = true)

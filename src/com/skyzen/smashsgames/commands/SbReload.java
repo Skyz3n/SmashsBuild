@@ -1,7 +1,7 @@
 package com.skyzen.smashsgames.commands;
 
 import com.skyzen.smashsgames.Main;
-import com.skyzen.smashsgames.event.PlayerListener;
+import com.skyzen.smashsgames.object.Scoreboards;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -10,7 +10,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.PluginManager;
 
-public class SbReload implements CommandExecutor{
+public class SbReload implements CommandExecutor {
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String args[]) {
 
@@ -23,7 +23,7 @@ public class SbReload implements CommandExecutor{
                 Bukkit.broadcastMessage("debut");
                 pluginManager.disablePlugin(Main.instance);
                 pluginManager.enablePlugin(Main.instance);
-                PlayerListener.scoreboards.init();
+                Scoreboards.init();
                 Bukkit.broadcastMessage("fin");
 
             } else {
@@ -34,7 +34,7 @@ public class SbReload implements CommandExecutor{
             Bukkit.broadcastMessage("debut");
             pluginManager.disablePlugin(Main.instance);
             pluginManager.enablePlugin(Main.instance);
-            PlayerListener.scoreboards.init();
+            Scoreboards.init();
             Bukkit.broadcastMessage("fin");
         }
 
