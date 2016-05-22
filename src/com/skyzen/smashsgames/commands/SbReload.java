@@ -19,14 +19,16 @@ public class SbReload implements CommandExecutor{
             Player player = (Player) sender;
 
             if (player.isOp()) {
-                pluginManager.getPlugin("SmashsBuild").reloadConfig();
+                pluginManager.disablePlugin(Main.instance);
+                pluginManager.enablePlugin(Main.instance);
 
             } else {
                 player.sendMessage(ChatColor.RED + "Il faut être builder");
             }
 
         } else {
-            pluginManager.getPlugin("SmashsBuild").reloadConfig();
+            pluginManager.disablePlugin(Main.instance);
+            pluginManager.enablePlugin(Main.instance);
         }
 
         return false;

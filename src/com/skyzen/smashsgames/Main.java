@@ -8,6 +8,7 @@ public class Main extends JavaPlugin {
 
     public static Main instance;
 
+    @Override
     public void onEnable() {
         instance = this;
 
@@ -27,8 +28,19 @@ public class Main extends JavaPlugin {
         getLogger().info("");
         getLogger().info("Nom du plugin: " + getDescription().getName());
         getLogger().info("Version: " + getDescription().getVersion());
+        getLogger().info("Successfull enable");
         getLogger().info("");
         getLogger().info("----------------------------------");
     }
 
+    @Override
+    public void onDisable() {
+        getLogger().info("----------------------------------");
+        getLogger().info("");
+        getLogger().info("Nom du plugin: " + getDescription().getName());
+        getLogger().info("Version: " + getDescription().getVersion());
+        getLogger().info("Successfull disable");
+        getLogger().info("");
+        getLogger().info("----------------------------------");
+    }
 }
