@@ -62,14 +62,14 @@ public class Scoreboards {
 
                 obj.getScore(ip[ipID]).setScore(0);
                 ipID++;
+                if (ipID > ip.length - 1) {
+                    ipID = 0;
+                }
                 obj.getScore(ip[ipID]).setScore(1);
 
                 for (Player online : Bukkit.getOnlinePlayers())
                     online.setScoreboard(board);
 
-                if (ipID > ip.length - 1) {
-                    ipID = 0;
-                }
                 titleID++;
                 if (titleID > title.length - 1) {
                     titleID = 0;
