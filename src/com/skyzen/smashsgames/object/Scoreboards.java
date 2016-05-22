@@ -1,5 +1,6 @@
 package com.skyzen.smashsgames.object;
 
+import com.skyzen.smashsgames.Main;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.scoreboard.DisplaySlot;
@@ -81,7 +82,7 @@ public class Scoreboards {
 
     public void flashing() {
         new Runnable() {
-            //public int taskID = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.instance, this, 0L, 2L);
+            public int taskID = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.instance, this, 0L, 2L);
             private int ipID = 0;
             private int titleID = 0;
 
