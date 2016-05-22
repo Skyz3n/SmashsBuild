@@ -1,6 +1,6 @@
 package com.skyzen.smashsgames.event;
 
-import com.skyzen.smashsgames.Main;
+import com.skyzen.smashsgames.object.Scoreboards;
 import com.skyzen.smashsgames.utils.ItemModifier;
 import com.skyzen.smashsgames.utils.Title;
 import org.bukkit.Bukkit;
@@ -23,6 +23,8 @@ import java.util.Date;
 
 public class PlayerListener implements Listener {
 
+    public Scoreboards scoreboards;
+
     @EventHandler
     public void messages(PlayerJoinEvent event) {
         Player p = event.getPlayer();
@@ -38,7 +40,10 @@ public class PlayerListener implements Listener {
 
         event.setJoinMessage(ChatColor.YELLOW + p.getName() + ChatColor.GRAY + " a rejoint le serveur " + ChatColor.GREEN + "(" + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers() + ")");
 
-        Main.instance.scoreboards.updatePlayer(false);
+        if (Bukkit.getOnlinePlayers().size() == 1)
+            this.scoreboards = new Scoreboards();
+
+        this.scoreboards.updatePlayer(false);
 
     }
 
@@ -46,7 +51,7 @@ public class PlayerListener implements Listener {
     public void messages(PlayerQuitEvent event) {
         Player p = event.getPlayer();
         event.setQuitMessage(ChatColor.YELLOW + p.getName() + ChatColor.GRAY + " a quitté le serveur " + ChatColor.GREEN + "(" + (Bukkit.getOnlinePlayers().size() - 1) + "/" + Bukkit.getMaxPlayers() + ")");
-        Main.instance.scoreboards.updatePlayer(true);
+        this.scoreboards.updatePlayer(true);
     }
 
     @EventHandler(priority = EventPriority.LOW, ignoreCancelled = true)
