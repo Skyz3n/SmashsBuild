@@ -28,7 +28,7 @@ public class Scoreboards {
 
         obj.getScore("  ").setScore(8);
 
-        obj.getScore("§7Joueurs: " + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers()).setScore(7);
+        obj.getScore("§7Joueurs: §3" + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers()).setScore(7);
 
         obj.getScore("   ").setScore(2);
 
@@ -39,11 +39,11 @@ public class Scoreboards {
 
     public static void updatePlayer(boolean deconnection) {
         if (deconnection) {
-            board.resetScores("§7Joueurs: " + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers());
-            obj.getScore("§7Joueurs: " + (Bukkit.getOnlinePlayers().size() + 1) + "/" + Bukkit.getMaxPlayers()).setScore(4);
+            board.resetScores("§7Joueurs: §3" + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers());
+            obj.getScore("§7Joueurs: §3" + (Bukkit.getOnlinePlayers().size() + 1) + "/" + Bukkit.getMaxPlayers()).setScore(4);
         } else {
-            board.resetScores("§7Joueurs: " + (Bukkit.getOnlinePlayers().size() + 1) + "/" + Bukkit.getMaxPlayers());
-            obj.getScore("§7Joueurs: " + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers()).setScore(4);
+            board.resetScores("§7Joueurs: §3" + (Bukkit.getOnlinePlayers().size() + 1) + "/" + Bukkit.getMaxPlayers());
+            obj.getScore("§7Joueurs: §3" + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers()).setScore(4);
         }
         for (Player online : Bukkit.getOnlinePlayers())
             online.setScoreboard(board);
