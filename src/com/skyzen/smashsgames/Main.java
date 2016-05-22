@@ -18,6 +18,9 @@ public class Main extends JavaPlugin {
         //Initialisation des listeners
         getServer().getPluginManager().registerEvents(new PlayerListener(), this);
 
+        //Support du reload complet du serveur -> a remplacer par /smashsbuild reload
+        PlayerListener.scoreboards.updatePlayer(false);
+
         getLogger().info("----------------------------------");
         getLogger().info("");
         getLogger().info("Nom du plugin: " + getDescription().getName());
