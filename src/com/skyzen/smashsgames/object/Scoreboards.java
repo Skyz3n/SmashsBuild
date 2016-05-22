@@ -34,7 +34,11 @@ public class Scoreboards {
 
         obj.getScore(ip[ipID]).setScore(1);
 
+        for (int n = 0; n < 10; n++)
+            Bukkit.broadcastMessage("spam 1 !");
         flashing();
+        for (int n = 0; n < 10; n++)
+            Bukkit.broadcastMessage("spam 2 !");
     }
 
     public static void updatePlayer(boolean deconnection) {
@@ -55,6 +59,8 @@ public class Scoreboards {
 
             @Override
             public void run() {
+                for (int n = 0; n < 10; n++)
+                    Bukkit.broadcastMessage("spam 3 !");
                 obj.setDisplayName(title[titleID]);
 
                 board.resetScores(ip[ipID]);
