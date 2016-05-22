@@ -28,11 +28,11 @@ public class Scoreboards {
         obj.setDisplaySlot(DisplaySlot.SIDEBAR);
         obj.setDisplayName(title[0]);
 
-        obj.getScore(" ").setScore(7);
+        obj.getScore(" ").setScore(8);
 
-        obj.getScore("§7Objectif: §5ElytraRace").setScore(6);
+        obj.getScore("§7Objectif: §5ElytraRace").setScore(7);
 
-        obj.getScore("  ").setScore(5);
+        obj.getScore("  ").setScore(6);
 
         obj.getScore("   ").setScore(4);
 
@@ -48,10 +48,10 @@ public class Scoreboards {
     public void updatePlayer(boolean deconnection) {
         if (deconnection) {
             board.resetScores("§7Joueurs: §3" + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers());
-            obj.getScore("§7Joueurs: §3" + (Bukkit.getOnlinePlayers().size() - 1) + "/" + Bukkit.getMaxPlayers()).setScore(17);
+            obj.getScore("§7Joueurs: §3" + (Bukkit.getOnlinePlayers().size() - 1) + "/" + Bukkit.getMaxPlayers()).setScore(5);
         } else {
             board.resetScores("§7Joueurs: §3" + (Bukkit.getOnlinePlayers().size() - 1) + "/" + Bukkit.getMaxPlayers());
-            obj.getScore("§7Joueurs: §3" + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers()).setScore(17);
+            obj.getScore("§7Joueurs: §3" + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers()).setScore(5);
         }
         for (Player online : Bukkit.getOnlinePlayers())
             online.setScoreboard(board);
