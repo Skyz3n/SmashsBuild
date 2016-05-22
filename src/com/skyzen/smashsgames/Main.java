@@ -1,6 +1,6 @@
 package com.skyzen.smashsgames;
 
-import com.skyzen.smashsgames.commands.SbReload;
+import com.skyzen.smashsgames.commands.SbObjectif;
 import com.skyzen.smashsgames.event.PlayerListener;
 import com.skyzen.smashsgames.object.Scoreboards;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -17,7 +17,7 @@ public class Main extends JavaPlugin {
         getConfig().options().copyDefaults(true);
 
         // Initialisation des commandes
-        getCommand("sb-reload").setExecutor(new SbReload());
+        getCommand("sb-reload").setExecutor(new SbObjectif());
 
         //Initialisation des listeners
         getServer().getPluginManager().registerEvents(new PlayerListener(), this);

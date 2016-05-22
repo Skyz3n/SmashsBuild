@@ -6,8 +6,8 @@ authors: [farzim]
 website: http://www.smashs.net/
 
 commands:
-  sb-reload:
+  sb-objectif:
     description: Reload le plugin SmashsBuild
-    aliases: [sbr, sbrl]
+    aliases: [sbj, sbobj, sb-obj]
 
 main: com.skyzen.smashsgames.Main
