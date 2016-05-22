@@ -68,7 +68,7 @@ public class Scoreboards {
             for (int n = 0; n < 10; n++)
                 Bukkit.broadcastMessage("spam 11 !");
             board.resetScores("§7Joueurs: §3" + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers());
-            obj.getScore("§7Joueurs: §3" + (Bukkit.getOnlinePlayers().size() + 1) + "/" + Bukkit.getMaxPlayers()).setScore(4);
+            obj.getScore("§7Joueurs: §3" + (Bukkit.getOnlinePlayers().size() - 1) + "/" + Bukkit.getMaxPlayers()).setScore(4);
         } else {
             for (int n = 0; n < 10; n++)
                 Bukkit.broadcastMessage("spam 12 !");
