@@ -10,11 +10,11 @@ import org.bukkit.scoreboard.Scoreboard;
 public class Scoreboards {
 
     private static int ipID = 0;
-    private static String ip[] = {"§bplay.smashs.net", "§9p§blay.smashs.net", "§fp§9l§bay.smashs.net", "§9p§fl§9a§by.smashs.net", "§bp§9l§fa§9y§b.smashs.net", "§bpl§9a§fy§9.§bsmashs.net", "§bpla§9y§f.§9s§bmashs.net", "§bplay§9.§fs§9m§bashs.net", "§bplay.§9s§fm§9a§bshs.net", "§bplay.s§9m§fa§9s§bhs.net", "§bplay.sm§9a§fs§9h§bs.net", "§bplay.sma§9s§fh§9s§b.net", "§bplay.smas§9h§fs§9.§bnet", "§bplay.smash§9s§f.§9n§bet", "§bplay.smashs§9.§fn§9e§bt", "§bplay.smashs.§9n§fe§9t", "§bplay.smashs.n§9e§ft", "§bplay.smashs.ne§9t", "§bplay.smashs.net"};
+    private static String ip[] = {"§6play.smashs.net", "§ep§6lay.smashs.net", "§fp§el§6ay.smashs.net", "§ep§fl§ea§6y.smashs.net", "§6p§el§fa§ey§6.smashs.net", "§6pl§ea§fy§e.§6smashs.net", "§6pla§ey§f.§es§6mashs.net", "§6play§e.§fs§em§6ashs.net", "§6play.§es§fm§ea§6shs.net", "§6play.s§em§fa§es§6hs.net", "§6play.sm§ea§fs§eh§6s.net", "§6play.sma§es§fh§es§6.net", "§6play.smas§eh§fs§e.§6net", "§6play.smash§es§f.§en§6et", "§6play.smashs§e.§fn§ee§6t", "§6play.smashs.§en§fe§et", "§6play.smashs.n§ee§ft", "§6play.smashs.ne§et", "§6play.smashs.net"};
 
     public static void build(boolean deconnection) {
         new Runnable() {
-            public int taskID = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.instance, this, 0L, 5L);
+            public int taskID = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.instance, this, 0L, 1L);
 
             @Override
             public void run() {
@@ -22,16 +22,16 @@ public class Scoreboards {
 
                 Objective obj = board.registerNewObjective("dummy", "title");
                 obj.setDisplaySlot(DisplaySlot.SIDEBAR);
-                obj.setDisplayName("§7☢ §b§lSmashsBuild §7☢");
+                obj.setDisplayName("§7☢ §6§lSmashsBuild §7☢");
 
                 obj.getScore(" ").setScore(10);
 
-                obj.getScore("§b§lObjectif Principal:").setScore(9);
+                obj.getScore("§6§lObjectif Principal:").setScore(9);
                 obj.getScore("§fCarte de ElytraRace").setScore(8);
 
                 obj.getScore("  ").setScore(7);
 
-                obj.getScore("§b§lJoueurs:").setScore(6);
+                obj.getScore("§6§lJoueurs:").setScore(6);
                 if (deconnection)
                     obj.getScore("§f" + (Bukkit.getOnlinePlayers().size() - 1) + "/" + Bukkit.getMaxPlayers()).setScore(5);
                 else
