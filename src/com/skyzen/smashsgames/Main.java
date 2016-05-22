@@ -7,6 +7,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class Main extends JavaPlugin {
 
     public static Main instance;
+    public Scoreboards scoreboards;
 
     public void onEnable() {
         instance = this;
@@ -15,7 +16,7 @@ public class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new PlayerListener(), this);
 
         //Initialisation du scoreboard;
-        Scoreboards.init();
+        this.scoreboards = new Scoreboards();
 
         getLogger().info("----------------------------------");
         getLogger().info("");
