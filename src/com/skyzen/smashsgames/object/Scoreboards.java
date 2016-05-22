@@ -50,7 +50,7 @@ public class Scoreboards {
             board.resetScores("§7Joueurs: §3" + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers());
             obj.getScore("§7Joueurs: §3" + (Bukkit.getOnlinePlayers().size() - 1) + "/" + Bukkit.getMaxPlayers()).setScore(17);
         } else {
-            board.resetScores("§7Joueurs: §3" + (Bukkit.getOnlinePlayers().size() + 1) + "/" + Bukkit.getMaxPlayers());
+            board.resetScores("§7Joueurs: §3" + (Bukkit.getOnlinePlayers().size() - 1) + "/" + Bukkit.getMaxPlayers());
             obj.getScore("§7Joueurs: §3" + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers()).setScore(17);
         }
         for (Player online : Bukkit.getOnlinePlayers())
