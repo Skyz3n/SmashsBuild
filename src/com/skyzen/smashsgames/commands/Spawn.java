@@ -28,7 +28,7 @@ public class Spawn implements CommandExecutor {
                 }
 
             } else {
-                player.sendMessage(Main.SERVER_PREFIX + ChatColor.RED + "Il faut être builder");
+                player.sendMessage(Main.SERVER_PREFIX + ChatColor.RED + " ");
             }
 
         } else {
