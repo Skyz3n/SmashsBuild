@@ -1,9 +1,7 @@
 package com.skyzen.smashsgames;
 
+import com.skyzen.smashsgames.commands.SbReload;
 import com.skyzen.smashsgames.event.PlayerListener;
-import org.bukkit.event.Listener;
-import com.skyzen.smashsgames.object.Scoreboards;
-import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin {
@@ -11,9 +9,13 @@ public class Main extends JavaPlugin {
     public static Main instance;
 
     public void onEnable() {
-        getConfig().options().copyDefaults(true);
-        this.saveConfig();
         instance = this;
+
+        // Enregistrement de la config
+        getConfig().options().copyDefaults(true);
+
+        // Initialisation des commandes
+        getCommand("sb-reload").setExecutor(new SbReload());
 
         //Initialisation des listeners
         getServer().getPluginManager().registerEvents(new PlayerListener(), this);
