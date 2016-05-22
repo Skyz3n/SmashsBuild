@@ -22,6 +22,8 @@ public class Main extends JavaPlugin {
         //Initialisation des listeners
         getServer().getPluginManager().registerEvents(new PlayerListener(), this);
 
+        Scoreboards.init();
+
         //Support du reload complet du serveur -> a remplacer par /smashsbuild reload
         Scoreboards.updatePlayer(false);
 
