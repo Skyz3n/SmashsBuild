@@ -20,17 +20,22 @@ public class SbReload implements CommandExecutor{
             Player player = (Player) sender;
 
             if (player.isOp()) {
+                Bukkit.broadcastMessage("debut");
                 pluginManager.disablePlugin(Main.instance);
                 pluginManager.enablePlugin(Main.instance);
+                PlayerListener.scoreboards.init();
+                Bukkit.broadcastMessage("fin");
 
             } else {
                 player.sendMessage(ChatColor.RED + "Il faut être builder");
             }
 
         } else {
+            Bukkit.broadcastMessage("debut");
             pluginManager.disablePlugin(Main.instance);
             pluginManager.enablePlugin(Main.instance);
             PlayerListener.scoreboards.init();
+            Bukkit.broadcastMessage("fin");
         }
 
         return false;

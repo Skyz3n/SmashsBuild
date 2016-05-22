@@ -19,6 +19,7 @@ public class Scoreboards {
     }
 
     public void init() {
+        Bukkit.broadcastMessage("AFFICHE TOI 1 !");
         this.board = Bukkit.getScoreboardManager().getNewScoreboard();
         this.obj = board.registerNewObjective("dummy", "title");
 
@@ -30,6 +31,7 @@ public class Scoreboards {
 
         obj.getScore(" ").setScore(8);
 
+        Bukkit.broadcastMessage("AFFICHE TOI 2 !");
         // obj.getScore("§7Objectif: §5ElytraRace").setScore(7);
         obj.getScore("§7Objectif: §5" + Main.instance.getConfig().getString("objectif")).setScore(7);
 
@@ -44,6 +46,7 @@ public class Scoreboards {
         obj.getScore(ip[0]).setScore(1);
 
         flashing();
+        Bukkit.broadcastMessage("AFFICHE TOI 3 !");
     }
 
     public void updatePlayer(boolean deconnection) {
