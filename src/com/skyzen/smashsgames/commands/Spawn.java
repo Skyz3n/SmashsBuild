@@ -13,7 +13,7 @@ public class Spawn implements CommandExecutor {
 
         if (sender instanceof Player) {
 
-            ((Player) sender).teleport(new Location(Bukkit.getWorld("world"), 952, 78, 456));
+            ((Player) sender).teleport(new Location(Bukkit.getWorld("world"), 952.500, 78.0, 456.500));
             return true;
 
         }

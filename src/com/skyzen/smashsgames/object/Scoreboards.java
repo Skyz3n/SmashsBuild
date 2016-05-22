@@ -10,7 +10,7 @@ import org.bukkit.scoreboard.Scoreboard;
 public class Scoreboards {
 
     private static String ip[] = {"§ep§6lay.smashs.net", "§fp§el§6ay.smashs.net", "§ep§fl§ea§6y.smashs.net", "§6p§el§fa§ey§6.smashs.net", "§6pl§ea§fy§e.§6smashs.net", "§6pla§ey§f.§es§6mashs.net", "§6play§e.§fs§em§6ashs.net", "§6play.§es§fm§ea§6shs.net", "§6play.s§em§fa§es§6hs.net", "§6play.sm§ea§fs§eh§6s.net", "§6play.sma§es§fh§es§6.net", "§6play.smas§eh§fs§e.§6net", "§6play.smash§es§f.§en§6et", "§6play.smashs§e.§fn§ee§6t", "§6play.smashs.§en§fe§et", "§6play.smashs.n§ee§ft", "§6play.smashs.ne§et", "§6play.smashs.net"};
-    private static String title[] = {"§e§lSm§6§lashs§b§lBuild", "§f§lSm§e§las§6§lhs§b§lBuild", "§e§lSm§f§las§e§lhs§b§lBuild", "§6§lSm§e§las§f§lhs§b§lBuild", "§f§lSm§e§las§6§lhs§a§lBuild"};
+    private static String title[] = {"§f§lElytraRace", "§6§lE§f§llytraRace", "§6§lEl§f§lytraRace", "§6§lEly§f§ltraRace", "§6§lElyt§f§lraRace", "§6§lElytr§f§laRace", "§6§lElytra§b§lRace", "§e§lE§f§llytraRace", "§e§lEl§f§ytraRace", "§e§lEly§f§ltraRace", "§e§lElyt§f§lraRace", "§e§lElytr§f§laRace", "§e§lElytra§a§lRace"};
     private static Scoreboard board;
     private static Objective obj;
 

@@ -12,5 +12,11 @@ commands:
   spawn:
     description: Retourner au spawn
     aliases: [s]
+  setwarp:
+    description: Créer un warp
+    aliases: [sw]
+  warp:
+    description: Se téléporter à un warp
+    aliases: [w]
 
 main: com.skyzen.smashsgames.Main

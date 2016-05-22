@@ -1,6 +1,7 @@
 package com.skyzen.smashsgames;
 
 import com.skyzen.smashsgames.commands.SbObjectif;
+import com.skyzen.smashsgames.commands.SetWarp;
 import com.skyzen.smashsgames.commands.Spawn;
 import com.skyzen.smashsgames.event.PlayerListener;
 import com.skyzen.smashsgames.object.Scoreboards;
@@ -22,6 +23,7 @@ public class Main extends JavaPlugin {
         // Initialisation des commandes
         getCommand("sb-objectif").setExecutor(new SbObjectif());
         getCommand("spawn").setExecutor(new Spawn());
+        getCommand("setwarp").setExecutor(new SetWarp());
 
         //Initialisation des listeners
         getServer().getPluginManager().registerEvents(new PlayerListener(), this);
