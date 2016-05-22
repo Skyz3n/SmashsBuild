@@ -10,7 +10,7 @@ import org.bukkit.scoreboard.Scoreboard;
 public class Scoreboards {
 
     private static int ipID = 0;
-    private static String ip[] = {"§b§lplay.smashs.net", "§b§lplay.smashs.net", "§b§lplay.smashs.net", "§b§lplay.smashs.net", "§b§lplay.smashs.net", "§b§lplay.smashs.net", "§b§lplay.smashs.net", "§b§lplay.smashs.net", "§b§lplay.smashs.net", "§b§lplay.smashs.net",};
+    private static String ip[] = {"§bplay.smashs.net", "§9p§blay.smashs.net", "§fp§9l§bay.smashs.net", "§9p§fl§9a§by.smashs.net", "§bp§9l§fa§9y§b.smashs.net", "§bpl§9a§fy§9.§bsmashs.net", "§bpla§9y§f.§9s§bmashs.net", "§bplay§9.§fs§9m§bashs.net", "§bplay.§9s§fm§9a§bshs.net", "§bplay.s§9m§fa§9s§bhs.net", "§bplay.sm§9a§fs§9h§bs.net", "§bplay.sma§9s§fh§9s§b.net", "§bplay.smas§9h§fs§9.§bnet", "§bplay.smash§9s§f.§9n§bet", "§bplay.smashs§9.§fn§9e§bt", "§bplay.smashs.§9n§fe§9t", "§bplay.smashs.n§9e§ft", "§bplay.smashs.ne§9t", "§bplay.smashs.net"};
 
     public static void build(boolean deconnection) {
         new Runnable() {
