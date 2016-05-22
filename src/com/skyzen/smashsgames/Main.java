@@ -3,11 +3,13 @@ package com.skyzen.smashsgames;
 import com.skyzen.smashsgames.commands.SbObjectif;
 import com.skyzen.smashsgames.event.PlayerListener;
 import com.skyzen.smashsgames.object.Scoreboards;
+import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin {
 
     public static Main instance;
+    public static String SERVER_PREFIX = ChatColor.DARK_GRAY + "[" + ChatColor.BLUE + "SmashsBuild" + ChatColor.DARK_GRAY + "]" + ChatColor.RESET;
 
     @Override
     public void onEnable() {

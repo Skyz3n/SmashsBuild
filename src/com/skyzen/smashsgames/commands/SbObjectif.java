@@ -25,11 +25,11 @@ public class SbObjectif implements CommandExecutor {
                     Main.instance.getConfig().set("objectif", args[0]);
                     Main.instance.saveConfig();
                 } else {
-                    player.sendMessage(ChatColor.RED + "Vous devez specifier un nouvelle objectif !");
+                    player.sendMessage(Main.SERVER_PREFIX + ChatColor.RED + "Vous devez specifier un nouvel objectif !");
                 }
 
             } else {
-                player.sendMessage(ChatColor.RED + "Il faut être builder");
+                player.sendMessage(Main.SERVER_PREFIX + ChatColor.RED + "Il faut être builder");
             }
 
         } else {
@@ -38,7 +38,7 @@ public class SbObjectif implements CommandExecutor {
                 Main.instance.getConfig().set("objectif", args[0]);
                 Main.instance.saveConfig();
             } else {
-                sender.sendMessage(ChatColor.RED + "Vous devez specifier un nouvelle objectif !");
+                sender.sendMessage(Main.SERVER_PREFIX + ChatColor.RED + "Vous devez specifier un nouvel objectif !");
             }
         }
 
