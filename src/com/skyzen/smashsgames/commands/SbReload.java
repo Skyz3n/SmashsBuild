@@ -1,6 +1,7 @@
 package com.skyzen.smashsgames.commands;
 
 import com.skyzen.smashsgames.Main;
+import com.skyzen.smashsgames.event.PlayerListener;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -29,6 +30,7 @@ public class SbReload implements CommandExecutor{
         } else {
             pluginManager.disablePlugin(Main.instance);
             pluginManager.enablePlugin(Main.instance);
+            PlayerListener.scoreboards.init();
         }
 
         return false;
