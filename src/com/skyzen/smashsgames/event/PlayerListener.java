@@ -35,8 +35,8 @@ public class PlayerListener implements Listener {
         p.setWalkSpeed(0.25f);
 
         PlayerInventory inv = p.getInventory();
-        inv.setItem(0, ItemModifier.setText(new ItemStack(Material.WOOD_AXE, 1), org.bukkit.ChatColor.GOLD + "WorldEdit", org.bukkit.ChatColor.GRAY + "La Hache magique"));
-        inv.setItem(1, ItemModifier.setText(new ItemStack(Material.WOOL, 1, (byte) 10), org.bukkit.ChatColor.DARK_PURPLE + "Laine d'outil", org.bukkit.ChatColor.GRAY + "Pour définir vos structures"));
+        inv.setItem(0, ItemModifier.setText(new ItemStack(Material.WOOD_AXE, 1), org.bukkit.ChatColor.GOLD + "Outil: WorldEdit", org.bukkit.ChatColor.GRAY + "La Hache magique"));
+        inv.setItem(1, ItemModifier.setText(new ItemStack(Material.WOOL, 1, (byte) 10), org.bukkit.ChatColor.DARK_PURPLE + "Outil: Laine", org.bukkit.ChatColor.GRAY + "Pour définir vos structures"));
 
         event.setJoinMessage(ChatColor.YELLOW + p.getName() + ChatColor.GRAY + " a rejoint le serveur " + ChatColor.GREEN + "(" + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers() + ")");
 
