@@ -28,15 +28,15 @@ public class Scoreboards {
         obj.setDisplaySlot(DisplaySlot.SIDEBAR);
         obj.setDisplayName(title[0]);
 
-        obj.getScore(" ").setScore(20);
+        obj.getScore(" ").setScore(7);
 
-        obj.getScore("§7Objectif: §5ElytraRace").setScore(19);
+        obj.getScore("§7Objectif: §5ElytraRace").setScore(6);
 
-        obj.getScore("  ").setScore(18);
+        obj.getScore("  ").setScore(5);
 
-        obj.getScore("   ").setScore(16);
+        obj.getScore("   ").setScore(4);
 
-        obj.getScore("§7Version: §a"+ Bukkit.getServer().getPluginManager().getPlugin("SmashsBuild").getDescription().getVersion()).setScore(15);
+        obj.getScore("§7Version: §a"+ Bukkit.getServer().getPluginManager().getPlugin("SmashsBuild").getDescription().getVersion()).setScore(3);
 
         obj.getScore("    ").setScore(2);
 
