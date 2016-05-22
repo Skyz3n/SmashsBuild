@@ -19,60 +19,34 @@ public class Scoreboards {
     }
 
     public void init() {
-        for (int n = 0; n < 10; n++)
-            Bukkit.broadcastMessage("spam -1 !");
         this.board = Bukkit.getScoreboardManager().getNewScoreboard();
-        for (int n = 0; n < 10; n++)
-            Bukkit.broadcastMessage("spam 0 !");
         this.obj = board.registerNewObjective("dummy", "title");
 
-        for (int n = 0; n < 10; n++)
-            Bukkit.broadcastMessage("spam 1 !");
         obj.setDisplaySlot(DisplaySlot.SIDEBAR);
         obj.setDisplayName(title[0]);
 
-        for (int n = 0; n < 10; n++)
-            Bukkit.broadcastMessage("spam 2 !");
         obj.getScore(" ").setScore(10);
 
-        for (int n = 0; n < 10; n++)
-            Bukkit.broadcastMessage("spam 3 !");
         obj.getScore("§7Objectif: §5ElytraRace").setScore(9);
 
-        for (int n = 0; n < 10; n++)
-            Bukkit.broadcastMessage("spam 4 !");
         obj.getScore("  ").setScore(8);
 
-        for (int n = 0; n < 10; n++)
-            Bukkit.broadcastMessage("spam 5 !");
         obj.getScore("§7Joueurs: §3" + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers()).setScore(7);
 
-        for (int n = 0; n < 10; n++)
-            Bukkit.broadcastMessage("spam 6 !");
         obj.getScore("   ").setScore(2);
 
-        for (int n = 0; n < 10; n++)
-            Bukkit.broadcastMessage("spam 7 !");
         obj.getScore(ip[0]).setScore(1);
 
-        for (int n = 0; n < 10; n++)
-            Bukkit.broadcastMessage("spam 8 !");
         flashing();
-        for (int n = 0; n < 10; n++)
-            Bukkit.broadcastMessage("spam 9 !");
     }
 
     public void updatePlayer(boolean deconnection) {
         for (int n = 0; n < 10; n++)
             Bukkit.broadcastMessage("spam 10 !");
         if (deconnection) {
-            for (int n = 0; n < 10; n++)
-                Bukkit.broadcastMessage("spam 11 !");
             board.resetScores("§7Joueurs: §3" + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers());
             obj.getScore("§7Joueurs: §3" + (Bukkit.getOnlinePlayers().size() - 1) + "/" + Bukkit.getMaxPlayers()).setScore(4);
         } else {
-            for (int n = 0; n < 10; n++)
-                Bukkit.broadcastMessage("spam 12 !");
             board.resetScores("§7Joueurs: §3" + (Bukkit.getOnlinePlayers().size() - 1) + "/" + Bukkit.getMaxPlayers());
             obj.getScore("§7Joueurs: §3" + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers()).setScore(4);
         }
@@ -88,18 +62,13 @@ public class Scoreboards {
 
             @Override
             public void run() {
-                for (int n = 0; n < 10; n++)
-                    Bukkit.broadcastMessage("spam 13 !");
                 obj.setDisplayName(title[titleID]);
 
                 board.resetScores(ip[ipID]);
-                Bukkit.broadcastMessage("ipID 1: " + ipID);
                 ipID++;
-                Bukkit.broadcastMessage("ipID 2: " + ipID);
                 if (ipID > ip.length - 1) {
                     ipID = 0;
                 }
-                Bukkit.broadcastMessage("ipID 3: " + ipID);
                 obj.getScore(ip[ipID]).setScore(1);
 
                 for (Player online : Bukkit.getOnlinePlayers())
