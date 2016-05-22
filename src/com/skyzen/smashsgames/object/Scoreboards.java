@@ -42,10 +42,10 @@ public class Scoreboards {
 
     public static void updatePlayer(boolean deconnection) {
         if (deconnection) {
-            obj.getScore("§f" + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers()).setScore(0);
+            board.resetScores("§f" + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers());
             obj.getScore("§f" + (Bukkit.getOnlinePlayers().size() - 1) + "/" + Bukkit.getMaxPlayers()).setScore(4);
         } else {
-            obj.getScore("§f" + (Bukkit.getOnlinePlayers().size() - 1) + "/" + Bukkit.getMaxPlayers()).setScore(0);
+            board.resetScores("§f" + (Bukkit.getOnlinePlayers().size() - 1) + "/" + Bukkit.getMaxPlayers());
             obj.getScore("§f" + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers()).setScore(4);
         }
         for (Player online : Bukkit.getOnlinePlayers())
@@ -60,7 +60,7 @@ public class Scoreboards {
             public void run() {
                 obj.setDisplayName(title[titleID]);
 
-                obj.getScore(ip[ipID]).setScore(0);
+                board.resetScores(ip[ipID]);
                 ipID++;
                 if (ipID > ip.length - 1) {
                     ipID = 0;
