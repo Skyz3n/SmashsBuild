@@ -31,7 +31,7 @@ public class Main extends JavaPlugin {
 
         getLogger().info("----------------------------------");
         getLogger().info("");
-        getLogger().info("Nom du plugin: " + getDescription().getName());
+        getLogger().info("Nom: " + getDescription().getName());
         getLogger().info("Version: " + getDescription().getVersion());
         getLogger().info("Successfull enable");
         getLogger().info("");
