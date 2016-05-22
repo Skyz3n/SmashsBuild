@@ -20,7 +20,7 @@ public class SbObjectif implements CommandExecutor {
             Player player = (Player) sender;
 
             if (player.isOp()) {
-                if (args.length > 1) {
+                if (args.length >= 1) {
                     Scoreboards.updateObjectif(Main.instance.getConfig().getString("objectif"), args[0]);
                     Main.instance.getConfig().set("objectif", args[0]);
                     Main.instance.saveConfig();
@@ -33,7 +33,7 @@ public class SbObjectif implements CommandExecutor {
             }
 
         } else {
-            if (args.length > 1) {
+            if (args.length >= 1) {
                 Scoreboards.updateObjectif(Main.instance.getConfig().getString("objectif"), args[0]);
                 Main.instance.getConfig().set("objectif", args[0]);
                 Main.instance.saveConfig();
