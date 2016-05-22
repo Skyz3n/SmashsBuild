@@ -1,6 +1,7 @@
 package com.skyzen.smashsgames;
 
 import com.skyzen.smashsgames.commands.SbObjectif;
+import com.skyzen.smashsgames.commands.Spawn;
 import com.skyzen.smashsgames.event.PlayerListener;
 import com.skyzen.smashsgames.object.Scoreboards;
 import org.bukkit.ChatColor;
@@ -20,6 +21,7 @@ public class Main extends JavaPlugin {
 
         // Initialisation des commandes
         getCommand("sb-objectif").setExecutor(new SbObjectif());
+        getCommand("spawn").setExecutor(new Spawn());
 
         //Initialisation des listeners
         getServer().getPluginManager().registerEvents(new PlayerListener(), this);

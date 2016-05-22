@@ -9,5 +9,8 @@ commands:
   sb-objectif:
     description: Modifier l'objectif de construction
     aliases: [sbj, sbobj, sb-obj]
+  spawn:
+    description: Retourner au spawn
+    aliases: [s]
 
 main: com.skyzen.smashsgames.Main
