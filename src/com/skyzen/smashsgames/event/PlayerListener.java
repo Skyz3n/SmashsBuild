@@ -25,6 +25,10 @@ public class PlayerListener implements Listener {
 
     public Scoreboards scoreboards;
 
+    public PlayerListener(){
+        this.scoreboards = new Scoreboards();
+    }
+
     @EventHandler
     public void messages(PlayerJoinEvent event) {
         Player p = event.getPlayer();
@@ -39,9 +43,6 @@ public class PlayerListener implements Listener {
         inv.setItem(1, ItemModifier.setText(new ItemStack(Material.WOOL, 1, (byte) 10), org.bukkit.ChatColor.DARK_PURPLE + "Outil: Laine", org.bukkit.ChatColor.GRAY + "Pour définir vos structures"));
 
         event.setJoinMessage(ChatColor.YELLOW + p.getName() + ChatColor.GRAY + " a rejoint le serveur " + ChatColor.GREEN + "(" + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers() + ")");
-
-        if (Bukkit.getOnlinePlayers().size() == 1)
-            this.scoreboards = new Scoreboards();
 
         this.scoreboards.updatePlayer(false);
 
