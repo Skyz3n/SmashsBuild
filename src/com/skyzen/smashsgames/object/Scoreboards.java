@@ -1,14 +1,11 @@
 package com.skyzen.smashsgames.object;
 
 import com.skyzen.smashsgames.Main;
-import com.skyzen.smashsgames.event.PlayerListener;
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.scoreboard.DisplaySlot;
 import org.bukkit.scoreboard.Objective;
 import org.bukkit.scoreboard.Scoreboard;
-import org.yaml.snakeyaml.DumperOptions;
 
 public class Scoreboards {
 
@@ -37,11 +34,9 @@ public class Scoreboards {
 
         obj.getScore("  ").setScore(18);
 
-        obj.getScore("§7Joueurs: §3" + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers()).setScore(17);
+        obj.getScore("   ").setScore(16);
 
-        obj.getScore("   ").setScore(14);
-
-        obj.getScore("§7Version: §a1.0").setScore(13);
+        obj.getScore("§7Version: §a1.0").setScore(15);
 
         obj.getScore("    ").setScore(2);
 
@@ -53,10 +48,10 @@ public class Scoreboards {
     public void updatePlayer(boolean deconnection) {
         if (deconnection) {
             board.resetScores("§7Joueurs: §3" + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers());
-            obj.getScore("§7Joueurs: §3" + (Bukkit.getOnlinePlayers().size() - 1) + "/" + Bukkit.getMaxPlayers()).setScore(15);
+            obj.getScore("§7Joueurs: §3" + (Bukkit.getOnlinePlayers().size() - 1) + "/" + Bukkit.getMaxPlayers()).setScore(17);
         } else {
-            board.resetScores("§7Joueurs: §3" + (Bukkit.getOnlinePlayers().size() - 1) + "/" + Bukkit.getMaxPlayers());
-            obj.getScore("§7Joueurs: §3" + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers()).setScore(15);
+            board.resetScores("§7Joueurs: §3" + (Bukkit.getOnlinePlayers().size() + 1) + "/" + Bukkit.getMaxPlayers());
+            obj.getScore("§7Joueurs: §3" + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers()).setScore(17);
         }
         for (Player online : Bukkit.getOnlinePlayers())
             online.setScoreboard(board);
