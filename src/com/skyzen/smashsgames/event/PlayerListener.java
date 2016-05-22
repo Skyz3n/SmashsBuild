@@ -29,7 +29,7 @@ public class PlayerListener implements Listener {
     public void messages(PlayerJoinEvent event) {
         Player p = event.getPlayer();
 
-        Title.sendTitle(p, 20, 50, 20, ChatColor.YELLOW + "SmashsBuild", ChatColor.AQUA + "Construisez-bien !");
+        Title.sendTitle(p, 20, 100, 20, ChatColor.YELLOW + "SmashsBuild", ChatColor.AQUA + "Construisez-bien !");
         Title.sendTabTitle(p, "&5|=| &fVous êtes connecté sur &6SmashsBuild &5|=|", "&fPlus d'informations sur &6§nhttp://smashs.net/");
         p.setPlayerListName(ChatColor.GRAY + " " + p.getName());
         p.setWalkSpeed(0.25f);
