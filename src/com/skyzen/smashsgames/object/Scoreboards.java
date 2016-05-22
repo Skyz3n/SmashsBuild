@@ -45,6 +45,11 @@ public class Scoreboards {
         Bukkit.broadcastMessage("AFFICHE TOI 3 !");
     }
 
+    public static void updateObjectif(String ansObjectif) {
+        board.resetScores("§7Objectif: §5" + ansObjectif);
+        obj.getScore("§7Objectif: §5" + Main.instance.getConfig().getString("objectif")).setScore(7);
+    }
+
     public static void updatePlayer(boolean deconnection) {
         if (deconnection) {
             board.resetScores("§7Joueurs: §3" + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers());
