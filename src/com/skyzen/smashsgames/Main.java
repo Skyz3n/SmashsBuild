@@ -9,6 +9,8 @@ public class Main extends JavaPlugin {
     public static Main instance;
 
     public void onEnable() {
+        getConfig().options().copyDefaults(false);
+        this.saveConfig();
         instance = this;
 
         //Initialisation des listeners
