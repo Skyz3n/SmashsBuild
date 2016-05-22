@@ -1,0 +1,7 @@
+ name: SmashsBuild
+ version: 1.0
+ description: Plugin pour le serveur build
+ author: Skyzen
+ website: http://www.smashs.net/
+
+ main: com.skyzen.smashsgames.Main
