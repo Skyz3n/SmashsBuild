@@ -25,7 +25,7 @@ public class PlayerListener implements Listener {
 
     public Scoreboards scoreboards;
 
-    public PlayerListener(){
+    public PlayerListener() {
         this.scoreboards = new Scoreboards();
     }
 
@@ -69,32 +69,31 @@ public class PlayerListener implements Listener {
 
     @EventHandler
     public void cancelBreak(BlockBreakEvent event) {
-        if (!event.getPlayer().isOp()) {
+        if (!event.getPlayer().isOp())
             event.setCancelled(true);
-        }
+
     }
 
     @EventHandler
     public void cancelPlace(BlockPlaceEvent event) {
-        if (!event.getPlayer().isOp()) {
+        if (!event.getPlayer().isOp())
             event.setCancelled(true);
-        }
+
 
     }
 
     @EventHandler
     public void cancelDrop(PlayerDropItemEvent event) {
-        if (!event.getPlayer().isOp()) {
+        if (!event.getPlayer().isOp())
             event.setCancelled(true);
-        }
 
     }
 
     @EventHandler
     public void cancelPickup(PlayerPickupItemEvent event) {
-        if (!event.getPlayer().isOp()) {
+        if (!event.getPlayer().isOp())
             event.setCancelled(true);
-        }
+
 
     }
 
