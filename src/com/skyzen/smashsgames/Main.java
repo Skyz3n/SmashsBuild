@@ -17,7 +17,7 @@ public class Main extends JavaPlugin {
         getConfig().options().copyDefaults(true);
 
         // Initialisation des commandes
-        getCommand("sb-reload").setExecutor(new SbObjectif());
+        getCommand("sb-objectif").setExecutor(new SbObjectif());
 
         //Initialisation des listeners
         getServer().getPluginManager().registerEvents(new PlayerListener(), this);
