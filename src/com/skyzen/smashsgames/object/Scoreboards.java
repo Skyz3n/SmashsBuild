@@ -16,7 +16,11 @@ public class Scoreboards {
     private static Objective obj;
 
     public static void init() {
+        for (int n = 0; n < 10; n++)
+            Bukkit.broadcastMessage("spam -1 !");
         board = Bukkit.getScoreboardManager().getNewScoreboard();
+        for (int n = 0; n < 10; n++)
+            Bukkit.broadcastMessage("spam 0 !");
         obj = board.registerNewObjective("dummy", "title");
 
         for (int n = 0; n < 10; n++)
