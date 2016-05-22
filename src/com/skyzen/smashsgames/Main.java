@@ -9,7 +9,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class Main extends JavaPlugin {
 
     public static Main instance;
-    public static String SERVER_PREFIX = ChatColor.DARK_GRAY + "[" + ChatColor.BLUE + "SmashsBuild" + ChatColor.DARK_GRAY + "]" + ChatColor.RESET;
+    public static String SERVER_PREFIX = ChatColor.DARK_GRAY + "[" + ChatColor.BLUE + "SmashsBuild" + ChatColor.DARK_GRAY + "] " + ChatColor.RESET;
 
     @Override
     public void onEnable() {
