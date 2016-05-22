@@ -36,7 +36,7 @@ public class Scoreboards {
 
         obj.getScore("   ").setScore(16);
 
-        obj.getScore("§7Version: §a1.0").setScore(15);
+        obj.getScore("§7Version: §a"+ Bukkit.getServer().getPluginManager().getPlugin("SmashsBuild").getDescription().getVersion()).setScore(15);
 
         obj.getScore("    ").setScore(2);
 
