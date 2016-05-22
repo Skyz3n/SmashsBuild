@@ -30,7 +30,8 @@ public class Scoreboards {
 
         obj.getScore(" ").setScore(8);
 
-        obj.getScore("§7Objectif: §5ElytraRace").setScore(7);
+        // obj.getScore("§7Objectif: §5ElytraRace").setScore(7);
+        obj.getScore("§7Objectif: §5" + Main.instance.getConfig().getString("objectif")).setScore(7);
 
         obj.getScore("  ").setScore(6);
 

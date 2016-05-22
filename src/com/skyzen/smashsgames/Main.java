@@ -11,7 +11,7 @@ public class Main extends JavaPlugin {
     public static Main instance;
 
     public void onEnable() {
-        getConfig().options().copyDefaults(false);
+        getConfig().options().copyDefaults(true);
         this.saveConfig();
         instance = this;
 
