@@ -7,7 +7,7 @@ website: http://www.smashs.net/
 
 commands:
   sb-objectif:
-    description: Reload le plugin SmashsBuild
+    description: Modifier l\'objectif de constructions
     aliases: [sbj, sbobj, sb-obj]
 
 main: com.skyzen.smashsgames.Main
