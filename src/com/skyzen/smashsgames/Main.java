@@ -1,6 +1,7 @@
 package com.skyzen.smashsgames;
 
 import com.skyzen.smashsgames.event.PlayerListener;
+import com.skyzen.smashsgames.object.Scoreboards;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin {
@@ -9,7 +10,12 @@ public class Main extends JavaPlugin {
 
     public void onEnable() {
         instance = this;
+
+        //Initialisation des listeners
         getServer().getPluginManager().registerEvents(new PlayerListener(), this);
+
+        //Initialisation du scoreboard;
+        Scoreboards.init();
 
         getLogger().info("----------------------------------");
         getLogger().info("");

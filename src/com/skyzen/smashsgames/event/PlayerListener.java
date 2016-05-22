@@ -38,7 +38,7 @@ public class PlayerListener implements Listener {
 
         event.setJoinMessage(ChatColor.YELLOW + p.getName() + ChatColor.GRAY + " a rejoint le serveur " + ChatColor.GREEN + "(" + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers() + ")");
 
-        Scoreboards.build(false);
+        Scoreboards.updatePlayer(false);
 
     }
 
@@ -46,7 +46,7 @@ public class PlayerListener implements Listener {
     public void messages(PlayerQuitEvent event) {
         Player p = event.getPlayer();
         event.setQuitMessage(ChatColor.YELLOW + p.getName() + ChatColor.GRAY + " a quitté le serveur " + ChatColor.GREEN + "(" + (Bukkit.getOnlinePlayers().size() - 1) + "/" + Bukkit.getMaxPlayers() + ")");
-        Scoreboards.build(true);
+        Scoreboards.updatePlayer(true);
     }
 
     @EventHandler(priority = EventPriority.LOW, ignoreCancelled = true)
