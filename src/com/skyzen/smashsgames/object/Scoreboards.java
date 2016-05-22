@@ -74,7 +74,7 @@ public class Scoreboards {
             @Override
             public void run() {
                 for (int n = 0; n < 10; n++)
-                    Bukkit.broadcastMessage("spam 10  !");
+                    Bukkit.broadcastMessage("spam 10 !");
                 obj.setDisplayName(title[titleID]);
 
                 board.resetScores(ip[ipID]);
