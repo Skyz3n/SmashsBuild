@@ -58,10 +58,13 @@ public class Scoreboards {
                 obj.setDisplayName(title[titleID]);
 
                 board.resetScores(ip[ipID]);
+                Bukkit.broadcastMessage("ipID 1: " + ipID);
                 ipID++;
+                Bukkit.broadcastMessage("ipID 2: " + ipID);
                 if (ipID > ip.length - 1) {
                     ipID = 0;
                 }
+                Bukkit.broadcastMessage("ipID 3: " + ipID);
                 obj.getScore(ip[ipID]).setScore(1);
 
                 for (Player online : Bukkit.getOnlinePlayers())
