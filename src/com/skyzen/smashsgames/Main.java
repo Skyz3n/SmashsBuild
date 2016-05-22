@@ -19,7 +19,6 @@ import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.bukkit.scoreboard.Objective;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -27,6 +26,7 @@ import java.util.Date;
 public class Main extends JavaPlugin implements Listener {
 
     public static Main instance;
+    SimpleDateFormat date = new SimpleDateFormat("HH:mm");
 
     public void onEnable() {
         instance = this;
@@ -39,8 +39,6 @@ public class Main extends JavaPlugin implements Listener {
         getLogger().info("");
         getLogger().info("----------------------------------");
     }
-
-    SimpleDateFormat date = new SimpleDateFormat("HH:mm");
 
     @EventHandler
     public void messages(PlayerJoinEvent event) {
@@ -92,20 +90,6 @@ public class Main extends JavaPlugin implements Listener {
             event.setCancelled(true);
         }
 
-    }
-
-    int changeText = 0;
-
-    public void changeText(final Objective o, long time, final String... text) {
-        Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.instance, new Runnable() {
-                    public void run() {
-                        if (changeText >= text.length)
-                            changeText = 0;
-                        o.setDisplayName(text[changeText]);
-                        changeText++;
-                    }
-                }
-                , 0, time);
     }
 
 }

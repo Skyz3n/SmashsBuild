@@ -1,6 +1,5 @@
 package com.skyzen.smashsgames.object;
 
-import com.skyzen.smashsgames.Main;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.scoreboard.DisplaySlot;
@@ -9,8 +8,10 @@ import org.bukkit.scoreboard.Scoreboard;
 
 public class Scoreboards {
 
-    public static void build(boolean deconnection) {
+    private static int ipID = 0;
+    private static String ip[] = {"§b§lplay.smashs.net", "§b§lplay.smashs.net", "§b§lplay.smashs.net", "§b§lplay.smashs.net", "§b§lplay.smashs.net", "§b§lplay.smashs.net", "§b§lplay.smashs.net", "§b§lplay.smashs.net", "§b§lplay.smashs.net", "§b§lplay.smashs.net",};
 
+    public static void build(boolean deconnection) {
         Scoreboard board = Bukkit.getScoreboardManager().getNewScoreboard();
 
         Objective obj = board.registerNewObjective("dummy", "title");
@@ -32,10 +33,15 @@ public class Scoreboards {
 
         obj.getScore("   ").setScore(2);
 
-        obj.getScore("§b§lplay.smashs.net").setScore(1);
+        obj.getScore(ip[ipID]).setScore(1);
 
         for (Player online : Bukkit.getOnlinePlayers())
             online.setScoreboard(board);
+
+        ipID++;
+        if (ipID > ip.length - 1) {
+            ipID = 0;
+        }
     }
 
 }
