@@ -13,9 +13,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.entity.FoodLevelChangeEvent;
-import org.bukkit.event.player.AsyncPlayerChatEvent;
-import org.bukkit.event.player.PlayerJoinEvent;
-import org.bukkit.event.player.PlayerQuitEvent;
+import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.event.player.*;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 
@@ -75,6 +74,30 @@ public class PlayerListener implements Listener {
             event.setCancelled(true);
         }
 
+    }
+
+    @EventHandler
+    public void cancelDrop(PlayerDropItemEvent event) {
+        if (!event.getPlayer().isOp()) {
+            event.setCancelled(true);
+        }
+
+    }
+
+    @EventHandler
+    public void cancelPickup(PlayerPickupItemEvent event) {
+        if (!event.getPlayer().isOp()) {
+            event.setCancelled(true);
+        }
+
+    }
+
+    @EventHandler
+    public void onInventoryEvent(InventoryClickEvent e) {
+        if (!((Player) e.getWhoClicked()).isOp()) {
+            e.setCancelled(true);
+            e.getWhoClicked().closeInventory();
+        }
     }
 
 }
