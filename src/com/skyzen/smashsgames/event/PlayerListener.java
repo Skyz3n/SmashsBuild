@@ -3,8 +3,8 @@ package com.skyzen.smashsgames.event;
 import com.skyzen.smashsgames.object.Scoreboards;
 import com.skyzen.smashsgames.utils.ItemModifier;
 import com.skyzen.smashsgames.utils.Title;
-import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -28,6 +28,7 @@ public class PlayerListener implements Listener {
     public void messages(PlayerJoinEvent event) {
         Player p = event.getPlayer();
 
+        Title.sendTitle(p, 20, 50, 20, ChatColor.YELLOW + "SmashsBuild", ChatColor.AQUA + "Amusez-vous bien !");
         Title.sendTabTitle(p, "&5|=| &fVous êtes connecté sur &6SmashsBuild &5|=|", "&fPlus d'informations sur &6§nhttp://smashs.net/");
         p.setPlayerListName(ChatColor.GRAY + " " + p.getName());
         p.setWalkSpeed(0.25f);
