@@ -32,6 +32,8 @@ public class Scoreboards {
 
         obj.getScore("   ").setScore(2);
 
+        for (int n = 0; n < 10; n++)
+            Bukkit.broadcastMessage("spam 2 !");
         obj.getScore(ip[ipID]).setScore(1);
 
         for (int n = 0; n < 10; n++)
