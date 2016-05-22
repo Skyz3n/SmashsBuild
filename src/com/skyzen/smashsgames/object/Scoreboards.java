@@ -1,6 +1,7 @@
 package com.skyzen.smashsgames.object;
 
 import com.skyzen.smashsgames.Main;
+import com.skyzen.smashsgames.event.PlayerListener;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
@@ -23,18 +24,25 @@ public class Scoreboards {
         this.board = Bukkit.getScoreboardManager().getNewScoreboard();
         this.obj = board.registerNewObjective("dummy", "title");
 
+        for (Player online : Bukkit.getOnlinePlayers())
+            online.setScoreboard(board);
+
         obj.setDisplaySlot(DisplaySlot.SIDEBAR);
         obj.setDisplayName(title[0]);
 
-        obj.getScore(" ").setScore(10);
+        obj.getScore(" ").setScore(20);
 
-        obj.getScore("§7Objectif: §5ElytraRace").setScore(9);
+        obj.getScore("§7Objectif: §5ElytraRace").setScore(19);
 
-        obj.getScore("  ").setScore(8);
+        obj.getScore("  ").setScore(18);
 
-        obj.getScore("§7Joueurs: §3" + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers()).setScore(7);
+        obj.getScore("§7Joueurs: §3" + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers()).setScore(17);
 
-        obj.getScore("   ").setScore(2);
+        obj.getScore("   ").setScore(14);
+
+        obj.getScore("§7Version: §a1.0").setScore(13);
+
+        obj.getScore("    ").setScore(2);
 
         obj.getScore(ip[0]).setScore(1);
 
@@ -44,13 +52,14 @@ public class Scoreboards {
     public void updatePlayer(boolean deconnection) {
         if (deconnection) {
             board.resetScores("§7Joueurs: §3" + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers());
-            obj.getScore("§7Joueurs: §3" + (Bukkit.getOnlinePlayers().size() - 1) + "/" + Bukkit.getMaxPlayers()).setScore(4);
+            obj.getScore("§7Joueurs: §3" + (Bukkit.getOnlinePlayers().size() - 1) + "/" + Bukkit.getMaxPlayers()).setScore(15);
         } else {
             board.resetScores("§7Joueurs: §3" + (Bukkit.getOnlinePlayers().size() - 1) + "/" + Bukkit.getMaxPlayers());
-            obj.getScore("§7Joueurs: §3" + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers()).setScore(4);
+            obj.getScore("§7Joueurs: §3" + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers()).setScore(15);
         }
         for (Player online : Bukkit.getOnlinePlayers())
             online.setScoreboard(board);
+
     }
 
     public void flashing() {

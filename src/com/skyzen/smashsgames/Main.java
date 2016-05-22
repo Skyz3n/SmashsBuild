@@ -1,7 +1,9 @@
 package com.skyzen.smashsgames;
 
 import com.skyzen.smashsgames.event.PlayerListener;
+import org.bukkit.event.Listener;
 import com.skyzen.smashsgames.object.Scoreboards;
+import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin {
