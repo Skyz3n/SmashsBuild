@@ -18,5 +18,8 @@ commands:
   warp:
     description: Se téléporter à un warp
     aliases: [w]
+  delwarp:
+    description: Supprimer un warp
+    aliases: [dw]
 
 main: com.skyzen.smashsgames.Main
