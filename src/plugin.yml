@@ -4,6 +4,7 @@ description: Plugin pour le serveur build
 author: Skyzen
 authors: [farzim]
 website: http://www.smashs.net/
+depend: [SmashsAPI]
 
 commands:
   sb-objectif:

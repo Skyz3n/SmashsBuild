@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="SmashsAPI">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../API/SmashsAPI.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

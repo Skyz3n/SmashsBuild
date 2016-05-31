@@ -5,6 +5,7 @@ import com.skyzen.smashsgames.utils.ItemModifier;
 import com.skyzen.smashsgames.utils.Title;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -15,6 +16,7 @@ import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.entity.FoodLevelChangeEvent;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.*;
+import org.bukkit.event.weather.WeatherChangeEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 
@@ -28,7 +30,7 @@ public class PlayerListener implements Listener {
         Player p = event.getPlayer();
 
         Title.sendTitle(p, 20, 100, 20, ChatColor.YELLOW + "SmashsBuild", ChatColor.AQUA + "Construisez-bien !");
-        Title.sendTabTitle(p, "&5|=| &fVous êtes connecté sur &6SmashsBuild &5|=|", "&fPlus d'informations sur &6§nhttp://smashs.net/");
+        Title.sendTabTitle(p, "&5|=| &fVous êtes connecté sur &6le serveur Build &5|=|", "&fPlus d'informations sur &6§nhttps://smashs.net/");
         p.setPlayerListName(ChatColor.GRAY + " " + p.getName());
         p.setWalkSpeed(0.25f);
 
@@ -38,13 +40,15 @@ public class PlayerListener implements Listener {
 
         event.setJoinMessage(ChatColor.YELLOW + p.getName() + ChatColor.GRAY + " a rejoint le serveur " + ChatColor.GREEN + "(" + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers() + ")");
 
+        p.teleport(new Location(Bukkit.getWorld("world"), 0.500, 70.0, 0.500), PlayerTeleportEvent.TeleportCause.PLUGIN);
+
         Scoreboards.updatePlayer(false);
     }
 
     @EventHandler
     public void messages(PlayerQuitEvent event) {
         Player p = event.getPlayer();
-        event.setQuitMessage(ChatColor.YELLOW + p.getName() + ChatColor.GRAY + " a quitté le serveur " + ChatColor.GREEN + "(" + (Bukkit.getOnlinePlayers().size() - 1) + "/" + Bukkit.getMaxPlayers() + ")");
+        event.setQuitMessage(null);
         Scoreboards.updatePlayer(true);
     }
 
@@ -57,7 +61,7 @@ public class PlayerListener implements Listener {
     public void chat(AsyncPlayerChatEvent e) {
         Player p = e.getPlayer();
         String time = new SimpleDateFormat("HH:mm").format(new Date());
-        e.setFormat(ChatColor.GOLD + time + ChatColor.GRAY + " > " + ChatColor.BLUE + p.getName() + ChatColor.GRAY + ": " + e.getMessage());
+        e.setFormat(ChatColor.GRAY + time + " " + ChatColor.YELLOW + p.getDisplayName() + ChatColor.GRAY + ": " + e.getMessage());
     }
 
     @EventHandler
@@ -88,6 +92,14 @@ public class PlayerListener implements Listener {
             event.setCancelled(true);
 
 
+    }
+
+    @EventHandler(priority = EventPriority.NORMAL, ignoreCancelled = true)
+    public void onRainStart(WeatherChangeEvent event) {
+        if (event.isCancelled())
+            return;
+
+        event.setCancelled(true);
     }
 
     @EventHandler
