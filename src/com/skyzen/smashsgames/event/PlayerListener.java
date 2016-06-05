@@ -77,19 +77,20 @@ public class PlayerListener implements Listener {
         e.setFormat(ChatColor.GRAY + time + " " + ChatColor.YELLOW + p.getDisplayName() + ChatColor.GRAY + ": " + e.getMessage());
     }
 
-    @EventHandler
-    public void cancelBreak(BlockBreakEvent event) {
-        if (!event.getPlayer().isOp())
+    @EventHandler(priority = EventPriority.NORMAL, ignoreCancelled = true)
+    public void onPlayerBreakBlock(BlockBreakEvent event) {
+        if (!SmashsAPI.instance.getJoueur(event.getPlayer()).hasPermission("block.break")) {
+            event.setExpToDrop(0);
             event.setCancelled(true);
-
+        }
     }
 
-    @EventHandler
-    public void cancelPlace(BlockPlaceEvent event) {
-        if (!event.getPlayer().isOp())
+    @EventHandler(priority = EventPriority.NORMAL, ignoreCancelled = true)
+    public void onPlayerPlaceBlock(BlockPlaceEvent event) {
+        if (!SmashsAPI.instance.getJoueur(event.getPlayer()).hasPermission("block.place")) {
+            event.setBuild(false);
             event.setCancelled(true);
-
-
+        }
     }
 
     @EventHandler
