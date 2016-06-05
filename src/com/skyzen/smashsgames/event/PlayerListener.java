@@ -50,7 +50,7 @@ public class PlayerListener implements Listener {
         j.setDisplayName();
 
         if (j.getRank().isDisplay())
-            event.setJoinMessage(event.getPlayer().getDisplayName() + " a rejoint le hub.");
+            event.setJoinMessage(event.getPlayer().getDisplayName() + " a rejoint le serveur.");
         else
             event.setJoinMessage(null);
     }
@@ -60,7 +60,7 @@ public class PlayerListener implements Listener {
         Scoreboards.updatePlayer(true);
 
         if (SmashsAPI.instance.getJoueur(event.getPlayer()).getRank().isDisplay())
-            event.setQuitMessage(event.getPlayer().getDisplayName() + " a quitté le hub.");
+            event.setQuitMessage(event.getPlayer().getDisplayName() + " a quitté le serveur.");
         else
             event.setQuitMessage(null);
     }
