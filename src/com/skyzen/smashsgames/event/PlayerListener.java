@@ -3,6 +3,7 @@ package com.skyzen.smashsgames.event;
 import com.skyzen.smashsgames.object.Scoreboards;
 import com.skyzen.smashsgames.utils.ItemModifier;
 import com.skyzen.smashsgames.utils.Title;
+import net.smashs.api.SmashsAPI;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
@@ -27,29 +28,38 @@ public class PlayerListener implements Listener {
 
     @EventHandler
     public void messages(PlayerJoinEvent event) {
-        Player p = event.getPlayer();
+        final Player p = event.getPlayer();
 
         Title.sendTitle(p, 20, 100, 20, ChatColor.YELLOW + "SmashsBuild", ChatColor.AQUA + "Construisez-bien !");
         Title.sendTabTitle(p, "&5|=| &fVous êtes connecté sur &6le serveur Build &5|=|", "&fPlus d'informations sur &6§nhttps://smashs.net/");
         p.setPlayerListName(ChatColor.GRAY + " " + p.getName());
         p.setWalkSpeed(0.25f);
 
-        PlayerInventory inv = p.getInventory();
+        final PlayerInventory inv = p.getInventory();
         inv.setItem(0, ItemModifier.setText(new ItemStack(Material.WOOD_AXE, 1), org.bukkit.ChatColor.GOLD + "Outil: WorldEdit", org.bukkit.ChatColor.GRAY + "La Hache magique"));
         inv.setItem(1, ItemModifier.setText(new ItemStack(Material.WOOL, 1, (byte) 10), org.bukkit.ChatColor.DARK_PURPLE + "Outil: Laine", org.bukkit.ChatColor.GRAY + "Pour définir vos structures"));
 
-        event.setJoinMessage(ChatColor.YELLOW + p.getName() + ChatColor.GRAY + " a rejoint le serveur " + ChatColor.GREEN + "(" + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers() + ")");
+        event.setJoinMessage(p.getDisplayName() + ChatColor.GRAY + " a rejoint le serveur.");
 
         p.teleport(new Location(Bukkit.getWorld("world"), 0.500, 70.0, 0.500), PlayerTeleportEvent.TeleportCause.PLUGIN);
 
         Scoreboards.updatePlayer(false);
+
+
+        if (SmashsAPI.instance.getJoueur(p).getRank().isDisplay())
+            event.setJoinMessage(event.getPlayer().getDisplayName() + " a rejoint le hub.");
+        else
+            event.setJoinMessage(null);
     }
 
     @EventHandler
     public void messages(PlayerQuitEvent event) {
-        Player p = event.getPlayer();
-        event.setQuitMessage(null);
         Scoreboards.updatePlayer(true);
+
+        if (SmashsAPI.instance.getJoueur(event.getPlayer()).getRank().isDisplay())
+            event.setQuitMessage(event.getPlayer().getDisplayName() + " a quitté le hub.");
+        else
+            event.setQuitMessage(null);
     }
 
     @EventHandler(priority = EventPriority.LOW, ignoreCancelled = true)

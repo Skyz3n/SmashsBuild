@@ -14,8 +14,4 @@ public class ItemModifier {
         item.setItemMeta(meta);
         return item;
     }
-
-    public static String getName(ItemStack item) {
-        return item.getItemMeta().getDisplayName();
-    }
 }
