@@ -4,6 +4,7 @@ import com.skyzen.smashsgames.object.Scoreboards;
 import com.skyzen.smashsgames.utils.ItemModifier;
 import com.skyzen.smashsgames.utils.Title;
 import net.smashs.api.SmashsAPI;
+import net.smashs.api.object.concret.Joueur;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
@@ -29,6 +30,7 @@ public class PlayerListener implements Listener {
     @EventHandler
     public void messages(PlayerJoinEvent event) {
         final Player p = event.getPlayer();
+        final Joueur j = SmashsAPI.instance.getJoueur(p);
 
         Title.sendTitle(p, 20, 100, 20, ChatColor.YELLOW + "SmashsBuild", ChatColor.AQUA + "Construisez-bien !");
         Title.sendTabTitle(p, "&5|=| &fVous êtes connecté sur &6le serveur Build &5|=|", "&fPlus d'informations sur &6§nhttps://smashs.net/");
@@ -45,8 +47,9 @@ public class PlayerListener implements Listener {
 
         Scoreboards.updatePlayer(false);
 
+        j.setDisplayName();
 
-        if (SmashsAPI.instance.getJoueur(p).getRank().isDisplay())
+        if (j.getRank().isDisplay())
             event.setJoinMessage(event.getPlayer().getDisplayName() + " a rejoint le hub.");
         else
             event.setJoinMessage(null);
